@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fb1b695bdf.js" crossorigin="anonymous"></script>
+    <script defer src="./js/takehome.js"></script>
+    <link rel="stylesheet" href="./css/takehome.css">
+    <title>day 5 Take Home</title>
+</head>
+<body>
+
+   <div class="formBox">
+    <h1>Please Enter a Password</h1>
+    <p>(must be between 6-20 characters & begin with a letter</p>
+    <div class="pwInput">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" placeholder="password" id="pW">
+        <span class="eye" onclick="pWord()"> 
+        <i id="hide1" class="fa-solid fa-eye"></i>
+        <i id="hide2" class="fa-solid fa-eye-slash"></i>
+         </span>
+    </div>
+    <button type="button" class="login-btn" onclick="submit()"id="submitPw">Submit</button>
+   </div>
+    
+</body>
+</html>
