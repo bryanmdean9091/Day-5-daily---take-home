@@ -5,37 +5,33 @@ Must be 6-20 characters long
 Must start with a letter
 alert the user if their password has been accepted or why their password was rejected*/
 
-function pWord() {
-    let a = document.getElementById("pW");
-    let b = document.getElementById("hide1");
-    let c = document.getElementById("hide2");
+const showBtn = document.getElementById('show');
+showBtn.addEventListener("click", eyeToggle)
 
-    if (a.type === "password") {
-        a.type = "text";
-        b.style.display = "block";
-        c.style.display = "none";
-    }
-     else {
-        a.type = "password";
-        b.style.display = "none";
-        c.style.sisplay = "block";
+function eyeToggle() {
+    passwordInput = document.getElementById('pW');
+    const input = document.getElementById('icon');
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text"
+        icon.innerText = "visibility_off"
+    } else {
+        passwordInput.type = "password"
+        icon.innerText = "visibility"
     }
 };
 
 function submit() {
     let pw = document.getElementById('pW');
+    if (pw.value.length < 6 || pw.value.length > 20 || pw.value == '') {
+        alert('Password Must be between 6 & 20 characters in length');
+        pw.value = "";
 
-    if (pw.value.length < 6 || pw.value.length > 20 || pw.value =='') {
-        alert('Password Must be between 6 & 20 characters in length')
-    } 
-    else if (pw.value.charAt(0) >= 0 && pw.value.charAt(0) <= 9) {
-        alert('Password MUST begin with a letter')
-    } 
-    else {
-        const submitClear = document.getElementById("submitPw");
+    } else if (pw.value.charAt(0).match(/[a-zA-Z]/) == null) {
+        alert('Password MUST begn with a letter')
+        pw.value = "";
+    } else {
         alert('Password is accepted');
-        submitClear.addEventListener("click", function clearField(){
-            pw.value = ""
-    })}
+        pw.value = "";
+        console.log(pw.value)
+    }
 };
-       
